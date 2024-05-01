@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131497194-1"></script>
+  <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-131497194-1');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coming Soon</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="comingsoon.css" />
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+</head>
+<body>
+    <div class="bgimg">
+        <div class="middle">
+            <!-- heading -->
+            <h1>Coming soon...</h1>
+            <!-- horizontal ruler -->
+            <hr>
+            <!-- paragraph -->
+            <p id="demo" style="font-size: 30px"></p>
+        </div>
+    </div>
+</body>
+<script>
+   var countDownDate = new Date("January 1, 2019 08:00:00 PST").getTime();
+   var countDownfunction = setInterval(function(){
+       var now = new Date().getTime();
+       var distance = countDownDate - now;
+       var days = Math.floor(distance/(1000*60*60*24));
+       var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+       var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+       var seconds = Math.floor((distance%(1000*60))/1000);
+   
+
+   document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+   if(distance<0) {
+       clearInterval(countDownfunction);
+       document.getElementById("demo").innerHTML = "Please refresh page";
+   }
+   },1000);
+</script>
+</html>
